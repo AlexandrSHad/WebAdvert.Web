@@ -83,6 +83,9 @@ namespace WebAdvert.Web.Controllers
                             Id = id,
                             Status = AdvertStatus.Pending // TODO: use deleted status
                         });
+
+                        // TODO: redirect to error page
+                        throw ex;
                     }
                 }
             }

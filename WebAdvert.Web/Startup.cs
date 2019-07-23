@@ -53,7 +53,7 @@ namespace WebAdvert.Web
                     HttpPolicyExtensions
                         .HandleTransientHttpError()
                         .OrResult(response => response.StatusCode == System.Net.HttpStatusCode.NotFound)
-                        .WaitAndRetryAsync(retryCount: 5, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)))
+                        .WaitAndRetryAsync(retryCount: 3, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)))
                 )
                 .AddPolicyHandler(
                     HttpPolicyExtensions
